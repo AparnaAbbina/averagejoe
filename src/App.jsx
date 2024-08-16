@@ -1,8 +1,11 @@
 function App() {
 	return (
-		<div className="w-screen grid place-content-center h-screen">
-			<p className="font-bold">Joe's Average Joes</p>
-		</div>
+		<main className="gap-4 w-screen grid place-content-center h-screen">
+			<h1 className="font-bold">Joe's Average Joes</h1>
+			<p>Answer Field</p>
+			<input type="text" defaultValue="Ask a question..." />
+			<button type="button">Submit</button>
+		</main>
 	);
 }
 
