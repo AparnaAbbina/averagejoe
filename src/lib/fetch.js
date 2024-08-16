@@ -1,4 +1,4 @@
-async function askQuestion() {
+async function askQuestion(question) {
     console.log(process.env.REACT_APP_API_KEY);
     const url = 'https://api.openai.com/v1/chat/completions';
     const headers = {
@@ -15,7 +15,7 @@ async function askQuestion() {
         },
         {
           role: 'user',
-          content: 'I need help finding my first job.'
+          content: question
         }
       ]
     };
@@ -33,6 +33,7 @@ async function askQuestion() {
     }
   }
   
+
     export default askQuestion;
   
   
