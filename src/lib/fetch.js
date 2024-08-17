@@ -1,5 +1,4 @@
 async function askQuestion(question) {
-	console.log(process.env.REACT_APP_API_KEY);
 	const url = "https://api.openai.com/v1/chat/completions";
 	const headers = {
 		Authorization: "Bearer " + process.env.REACT_APP_API_KEY,

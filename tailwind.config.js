@@ -5,7 +5,11 @@ module.exports = {
 		"./public/index.html", // Include any other directories or files
 	],
 	theme: {
-		extend: {},
+		extend: {
+			gridTemplateRows: {
+				"auto-1fr": "auto 1fr",
+			},
+		},
 	},
 	plugins: [],
 };
