@@ -20,6 +20,7 @@ function App() {
 		setMemory((prevMemory) => [...prevMemory, newMemory]);
 	}
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Needs to run on memory change
 	useEffect(() => {
 		if (memoryRef.current) {
 			memoryRef.current.scrollTop = memoryRef.current.scrollHeight;
@@ -43,12 +44,16 @@ function App() {
 					ref={memoryRef}
 					className="w-full md:w-[35em] rounded-md h-[35em] whitespace-pre-line overflow-y-auto border border-blue-200 p-5"
 				>
-					{memory.map((mem, index) => (
-						<span className="flex flex-col gap-2" key={index}>
-							<br />
-							<span className="font-bold">{mem.text}</span> {mem.response}
-						</span>
-					))}
+					{memory.map((memory, index) => {
+						const key = Math.random() * index + 1;
+						return (
+							<span className="flex flex-col gap-2" key={key}>
+								<br />
+								<span className="font-bold">{memory.text}</span>{" "}
+								{memory.response}
+							</span>
+						);
+					})}
 				</div>
 				<br />
 				<section className="flex flex-row gap-5 justify-center">
