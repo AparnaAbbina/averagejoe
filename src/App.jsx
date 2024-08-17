@@ -3,16 +3,20 @@ import { useState, useEffect, useRef } from "react";
 
 function App() {
 	const [inputVal, setInputVal] = useState("Introduce yourself 🤖");
-	const [memory, setMemory] = useState("");
+	const [memory, setMemory] = useState([]);
 	const memoryRef = useRef(null);
 
 	async function dataset() {
 		const response = await askQuestion(inputVal);
 		const newMemory = response
-			? `Hey ${inputVal}!\nApologies, I can't respond right now. Please try again later.`
-			: inputVal + response.choices[0].message.content;
+			? {
+					text: inputVal,
+					response:
+						"Apologies, I can't respond right now. Please try again later.",
+				}
+			: { text: inputVal, response: response.choices[0].message.content };
 
-		setMemory((prevMemory) => `${prevMemory}\n${newMemory}\n`);
+		setMemory((prevMemory) => [...prevMemory, newMemory]);
 	}
 
 	useEffect(() => {
@@ -33,14 +37,17 @@ function App() {
 				<p className="font-bold text-slate-900 w-full text-center">
 					{welcomeMessage}
 				</p>
-				<br />
-				<p
+				<div
 					ref={memoryRef}
-					className="w-full md:w-[35em] rounded-md h-[35em] whitespace-pre-line overflow-y-auto border border-blue-200 p-4"
+					className="w-full md:w-[35em] rounded-md h-[35em] whitespace-pre-line overflow-y-auto border border-blue-200 p-5"
 				>
-					{memory}
-				</p>
-				<br />
+					{memory.map((mem, index) => (
+						<span className="flex flex-col gap-2" key={index}>
+							<br />
+							<span className="font-bold">{mem.text}</span> {mem.response}
+						</span>
+					))}
+				</div>
 				<section className="flex flex-row gap-5 justify-center">
 					<input
 						type="text"
