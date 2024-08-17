@@ -8,6 +8,7 @@ function App() {
 
 	async function dataset() {
 		const response = await askQuestion(inputVal);
+		console.log(response);
 		const newMemory = response
 			? {
 					text: inputVal,
@@ -30,13 +31,14 @@ function App() {
 
 	return (
 		<main className="w-screen h-screen grid grid-rows-auto-1fr gap-2">
-			<nav className="w-full h-fit p-2 text-blue-400 font-bold text-2xl">
+			<nav className="w-full h-fit p-4 text-blue-400 font-bold text-4xl">
 				<h1>Joe's Average Joes</h1>
 			</nav>
 			<section className="w-full p-4 flex flex-col gap-2 items-center">
 				<p className="font-bold text-slate-900 w-full text-center">
 					{welcomeMessage}
 				</p>
+				<br />
 				<div
 					ref={memoryRef}
 					className="w-full md:w-[35em] rounded-md h-[35em] whitespace-pre-line overflow-y-auto border border-blue-200 p-5"
@@ -48,6 +50,7 @@ function App() {
 						</span>
 					))}
 				</div>
+				<br />
 				<section className="flex flex-row gap-5 justify-center">
 					<input
 						type="text"
@@ -56,7 +59,11 @@ function App() {
 						onFocus={(e) => e.target.select()}
 						className="border-blue-200 px-4 py-2 border-2 rounded-md"
 					/>
-					<button type="button" onClick={() => dataset()}>
+					<button
+						className="text-slate-200 hover:text-slate-50 bg-blue-400 hover:bg-blue-900 transition-all duration-1000 px-4 py-2 rounded-md"
+						type="button"
+						onClick={() => dataset()}
+					>
 						Submit
 					</button>
 				</section>
