@@ -53,7 +53,7 @@ function App() {
 
 	// This is the welcome message that is displayed when the user first loads the page.
 	const welcomeMessage =
-		"Welcome to Joe's Average Joes! Get career advice and explore job options in this friendly chat for students aged 16-18. Discover your future today!";
+		"Welcome to Powering Futures' career chat bot! Looking for guidance on your career path? Our AI chatbot is here to help! Ask questions about job options, resume tips, and interview prep. Start exploring your interests and uncover exciting opportunities today!";
 
 	return (
 		<main className="w-screen h-screen grid grid-rows-auto-1fr gap-2">
@@ -61,7 +61,7 @@ function App() {
 				<img className="h-[80px]" src="/PowerFuture.png" alt="logo" />
 			</nav>
 			<section className="w-full p-4 flex flex-col gap-2 items-center">
-				<p className="font-bold text-slate-900 w-full text-center">
+				<p className="font-bold text-slate-900 w-3/4 text-center">
 					{welcomeMessage}
 				</p>
 				<br />
@@ -83,7 +83,7 @@ function App() {
 					})}
 				</div>
 				<br />
-				<section className="flex flex-row gap-5 justify-center">
+				<section className="flex flex-row gap-5 justify-center w-3/4">
 					<input
 						type="text"
 						value={inputVal}
@@ -91,7 +91,7 @@ function App() {
 						onChange={handleChange}
 						// When the input is clicked, we select the text.
 						onFocus={(e) => e.target.select()}
-						className="border-blue-200 px-4 py-2 border-2 rounded-md"
+						className="border-blue-200 px-4 py-2 border-2 rounded-md w-1/2"
 					/>
 					<button
 						className="text-slate-200 hover:text-slate-50 bg-blue-400 hover:bg-blue-900 transition-all duration-1000 px-4 py-2 rounded-md"
