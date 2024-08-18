@@ -31,11 +31,13 @@ function App() {
 		setMemory((prevMemory) => [...prevMemory, newMemory]);
 	}
 
+	// This function is used to sanitize the input from the user to prevent XSS attacks.
 	function sanitizeInput(input) {
-		const sanitized = input.replace(/<script.*?>.*?<\/script>/g, "");
+		const sanitized = input.replace(/<script.*?>.*?<\/script>| < | > |/g, "");
 		return sanitized;
 	}
 
+	// This function is used to handle the change in the input value.
 	function handleChange(e) {
 		const sanitizedInput = sanitizeInput(e.target.value);
 		setInputVal(sanitizedInput);
