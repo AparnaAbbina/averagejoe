@@ -74,10 +74,12 @@ function App() {
 					{memory.map((memory, index) => {
 						const key = Math.random() * index + 1;
 						return (
-							<span className="flex flex-col gap-2" key={key}>
+							<span key={key}>
+								<span className="flex flex-col gap-2">
+									<span className="font-bold">{memory.text}</span>{" "}
+									{memory.response}
+								</span>
 								<br />
-								<span className="font-bold">{memory.text}</span>{" "}
-								{memory.response}
 							</span>
 						);
 					})}
