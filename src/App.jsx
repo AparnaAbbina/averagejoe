@@ -30,6 +30,17 @@ function App() {
 		// We then add the newMemory to the memory array.
 		setMemory((prevMemory) => [...prevMemory, newMemory]);
 	}
+
+	function sanitizeInput(input) {
+		const sanitized = input.replace(/<script.*?>.*?<\/script>/g, "");
+		return sanitized;
+	}
+
+	function handleChange(e) {
+		const sanitizedInput = sanitizeInput(e.target.value);
+		setInputVal(sanitizedInput);
+	}
+
 	// This useEffect is used to scroll to the bottom of the memoryRef when the memory changes.
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Needs to run on memory change
 	useEffect(() => {
@@ -75,7 +86,7 @@ function App() {
 						type="text"
 						value={inputVal}
 						// When the inputVal changes, we set the inputVal to the value of the input.
-						onChange={(e) => setInputVal(e.target.value)}
+						onChange={handleChange}
 						// When the input is clicked, we select the text.
 						onFocus={(e) => e.target.select()}
 						className="border-blue-200 px-4 py-2 border-2 rounded-md"
