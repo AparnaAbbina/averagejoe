@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 
 function App() {
 	// The inputVal is storing our users input which we can then send to the API.
-	const [inputVal, setInputVal] = useState("Introduce yourself 🤖");
+	const [inputVal, setInputVal] = useState("Hey, whats your name?");
 	// This is storing our memory, allowing us a list of the questions and responses.
 	const [memory, setMemory] = useState([]);
 	// If this is set to true, our Button will display "Thinking..." instead of "Submit".
