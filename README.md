@@ -2,6 +2,8 @@
 
 Welcome to `Joe's Average Joes` career chat bot! This AI chatbot is designed to help users with career guidance, job options, resume tips, and interview preparation. Start exploring your interests and uncover exciting opportunities today! For the Codefest Hackathon with `Powering Futures` as our stakeholder.
 
+Deployed website - [Click here](https://averagejoe.vercel.app/)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
