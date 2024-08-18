@@ -57,8 +57,8 @@ function App() {
 
 	return (
 		<main className="w-screen h-screen grid grid-rows-auto-1fr gap-2">
-			<nav className="w-full h-fit p-4 md:pl-20 bg-slate-900 h-fit">
-				<img className="h-[80px]" src="/PowerFuture.png" alt="logo" />
+			<nav className="w-full h-fit p-2 md:pl-10 bg-slate-900 h-fit">
+				<img className="h-[56px]" src="/PowerFuture.png" alt="logo" />
 			</nav>
 			<section className="w-full p-4 flex flex-col gap-2 items-center">
 				<p className="font-bold text-slate-900 w-3/4 text-center">
