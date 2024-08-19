@@ -53,7 +53,7 @@ function App() {
 
 	// This is the welcome message that is displayed when the user first loads the page.
 	const welcomeMessage =
-		"Welcome to Powering Futures' career chat bot! Looking for guidance on your career path? Our AI chatbot is here to help! Ask questions about job options, resume tips, and interview prep. Start exploring your interests and uncover exciting opportunities today!";
+		"Welcome to Powering Futures' career chat bot! Looking for guidance on your career path? Our AI chatbot is here to help! Ask questions about job options, resume tips, and interview prep. Start exploring your interests and uncover exciting opportunities today! Let's power up your future together!";
 
 	return (
 		<main className="w-screen h-screen grid grid-rows-auto-1fr gap-2">
